@@ -3,8 +3,8 @@ ARG is_ssh=false
 FROM python:3.10-bullseye AS base
 
 RUN apt-get update && \
-        apt-get install -y build-essential cmake clang-11 openssl libssl-dev zlib1g-dev libmicrohttpd-dev gperf wget git openssl wget python nano libsecp256k1-dev libsodium-dev pkg-config && \
-        rm -rf /var/lib/apt/lists/*
+	apt-get install -y build-essential cmake clang-11 openssl libssl-dev zlib1g-dev libmicrohttpd-dev gperf wget git openssl wget python nano libsecp256k1-dev libsodium-dev pkg-config liblz4-dev && \
+	rm -rf /var/lib/apt/lists/*
 ENV CMAKE_C_COMPILER clang-11.0
 ENV CMAKE_CXX_COMPILER clang++-11.0
 WORKDIR /
